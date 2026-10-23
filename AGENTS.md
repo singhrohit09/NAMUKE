@@ -6,6 +6,7 @@ Read `docs/PROBLEM_STATEMENT.md` and `docs/ARCHITECTURE.md` before implementing 
 ## Team Coordination
 - Read `docs/TEAM_ROLES.md`.
 - Read the relevant member's role file before coding (`docs/MohitRole.md`, `docs/RohitRole.md`, `docs/GauravRole.md`).
+- Read `SKILLS_SETUP.md` and activate the appropriate skills from `.agents/skills/`.
 - Read `docs/WORKFLOW.md` and `docs/RULES.md`.
 - Check `docs/TASK_BOARD.md` before starting a task.
 - Respect the file ownership assigned to each member.
@@ -36,9 +37,10 @@ Read `docs/PROBLEM_STATEMENT.md` and `docs/ARCHITECTURE.md` before implementing 
 
 ## Working Protocol
 1. Read `AGENTS.md` and `docs/TEAM_ROLES.md`.
-2. Read `docs/WORKFLOW.md` and `docs/RULES.md`.
-3. Check `docs/TASK_BOARD.md`.
-4. Work only on assigned files unless coordinated.
-5. Pull the latest `main` before integrating changes.
-6. Test your changes before committing.
-7. Report blockers and update the task board.
+2. Check `SKILLS_SETUP.md` for relevant domain skills.
+3. Read `docs/WORKFLOW.md` and `docs/RULES.md`.
+4. Check `docs/TASK_BOARD.md`.
+5. Work only on assigned files unless coordinated.
+6. Pull the latest `main` before integrating changes.
+7. Test your changes before committing.
+8. Report blockers and update the task board.
