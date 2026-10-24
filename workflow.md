@@ -9,7 +9,7 @@ git pull --no-rebase origin main
 
 ---
 
-### 2. While Coding
+### 2. While Coding72 is going out
 Work in your assigned folder and commit regularly.
 
 ```bash
