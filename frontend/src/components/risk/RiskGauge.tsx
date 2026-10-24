@@ -27,10 +27,10 @@ export const RiskGauge: React.FC<RiskGaugeProps> = ({ score, size = 180 }) => {
       <svg width={size} height={size * 0.65} viewBox={`0 0 ${size} ${size * 0.75}`}>
         <defs>
           <linearGradient id="gaugeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#526B59" />
-            <stop offset="35%" stopColor="#A67C38" />
-            <stop offset="70%" stopColor="#B9684D" />
-            <stop offset="100%" stopColor="#8E3935" />
+            <stop offset="0%" stopColor="#586E53" />
+            <stop offset="35%" stopColor="#E8AD55" />
+            <stop offset="70%" stopColor="#D96C5F" />
+            <stop offset="100%" stopColor="#B7493E" />
           </linearGradient>
         </defs>
 

@@ -3,7 +3,6 @@ import { DashboardLayout } from './components/layout/DashboardLayout';
 import { NavigationTab } from './components/layout/Sidebar';
 import { PageHeader } from './components/layout/PageHeader';
 import { WeatherOverview } from './components/dashboard/WeatherOverview';
-import { HeroBriefing } from './components/dashboard/HeroBriefing';
 import { WeatherMetrics } from './components/dashboard/WeatherMetrics';
 import { ForecastSummary } from './components/dashboard/ForecastSummary';
 import { HistoricalTrends } from './components/dashboard/HistoricalTrends';
@@ -114,15 +113,6 @@ export const App: React.FC = () => {
             />
           ) : currentWeather ? (
             <>
-              {/* Editorial Hero Meteorological Briefing */}
-              <HeroBriefing
-                weather={currentWeather}
-                location={selectedLocation}
-                alerts={alerts}
-                onExploreMap={() => setActiveTab('map')}
-                onViewAlerts={() => setActiveTab('alerts')}
-              />
-
               {/* Primary Overview Summary */}
               <WeatherOverview weather={currentWeather} />
 

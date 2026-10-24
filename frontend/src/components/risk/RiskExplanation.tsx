@@ -9,19 +9,26 @@ interface RiskExplanationProps {
 export const RiskExplanation: React.FC<RiskExplanationProps> = ({ assessment }) => {
   return (
     <div className="bg-white border border-softborder rounded p-6 space-y-5 shadow-subtle">
-      <div className="flex items-center gap-2 pb-3 border-b border-softborder">
-        <HelpCircle className="w-4 h-4 text-monsoon" />
-        <h3 className="text-base font-serif font-semibold text-charcoal">
-          Atmospheric Physics & Diagnostic Analysis
-        </h3>
-        <span className="text-[10px] font-mono text-charcoal-muted ml-auto">
-          Sounding Diagnostic Analysis
+      <div className="flex items-center justify-between pb-3 border-b border-softborder">
+        <div className="flex items-center gap-2">
+          <HelpCircle className="w-4 h-4 text-sage-dark" />
+          <h3 className="text-base font-serif font-semibold text-charcoal">
+            Why This Risk?
+          </h3>
+        </div>
+        <span className="text-[10px] font-mono text-charcoal-muted">
+          Contributing Factor Analysis
         </span>
       </div>
 
-      <p className="text-xs md:text-sm text-charcoal leading-relaxed font-sans">
-        {assessment.primary_explanation}
-      </p>
+      <div className="p-3 rounded bg-ivory-50 border border-softborder text-xs md:text-sm text-charcoal leading-relaxed font-sans">
+        <p className="font-medium text-charcoal mb-1">
+          {assessment.primary_explanation}
+        </p>
+        <p className="text-[11px] text-charcoal-muted mt-1 leading-normal">
+          The demonstration assessment evaluates simulated surface moisture, barometric tendencies, and convective indices. Localized estimates provide situational awareness without claiming absolute scientific certainty.
+        </p>
+      </div>
 
       {/* Observed Contributing Parameters Table */}
       {assessment.factors && assessment.factors.length > 0 && (

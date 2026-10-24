@@ -32,35 +32,35 @@ export function getRiskColor(category: RiskCategory): {
   switch (category) {
     case 'LOW':
       return {
-        text: 'text-monsoon',
-        bg: 'bg-monsoon/10',
-        border: 'border-monsoon/30',
-        hex: '#526B59',
-        pill: 'bg-monsoon/10 text-monsoon border border-monsoon/25',
+        text: 'text-sage-dark',
+        bg: 'bg-sage/15',
+        border: 'border-sage/40',
+        hex: '#586E53',
+        pill: 'bg-sage/15 text-sage-dark border border-sage/40 font-medium',
       };
     case 'MODERATE':
       return {
-        text: 'text-ochre',
-        bg: 'bg-ochre/10',
-        border: 'border-ochre/30',
-        hex: '#A67C38',
-        pill: 'bg-ochre/10 text-ochre border border-ochre/25',
+        text: 'text-amber-dark',
+        bg: 'bg-amber/15',
+        border: 'border-amber/40',
+        hex: '#E8AD55',
+        pill: 'bg-amber/15 text-amber-dark border border-amber/40 font-medium',
       };
     case 'HIGH':
       return {
-        text: 'text-terracotta',
-        bg: 'bg-terracotta/10',
-        border: 'border-terracotta/30',
-        hex: '#B9684D',
-        pill: 'bg-terracotta/10 text-terracotta border border-terracotta/25',
+        text: 'text-coral',
+        bg: 'bg-coral/15',
+        border: 'border-coral/40',
+        hex: '#D96C5F',
+        pill: 'bg-coral/15 text-coral border border-coral/40 font-medium',
       };
     case 'SEVERE':
       return {
         text: 'text-crimson',
-        bg: 'bg-crimson/10',
-        border: 'border-crimson/35',
-        hex: '#8E3935',
-        pill: 'bg-crimson/15 text-crimson border border-crimson/35 font-medium',
+        bg: 'bg-crimson/15',
+        border: 'border-crimson/40',
+        hex: '#B7493E',
+        pill: 'bg-crimson/15 text-crimson border border-crimson/40 font-medium',
       };
     default:
       return {

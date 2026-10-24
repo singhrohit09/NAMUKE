@@ -72,66 +72,74 @@ export const HazardBreakdown: React.FC<HazardBreakdownProps> = ({ hazards }) => 
         return (
           <div
             key={hz.id}
-            className="p-3.5 rounded bg-white border border-softborder hover:border-charcoal-muted/40 transition shadow-subtle"
+            className="p-3.5 rounded bg-white border border-softborder hover:border-charcoal-muted/40 transition shadow-subtle box-border"
           >
-            {/* Header: Hazard title, badge, lead time, score */}
-            <div className="flex items-center justify-between gap-3 mb-2">
-              <div className="flex items-center gap-2.5">
-                <div className="p-1.5 rounded bg-ivory-50 border border-softborder shrink-0">
-                  {getHazardIcon(hz.type)}
-                </div>
-                <div>
-                  <div className="flex items-center gap-2">
-                    <h4 className="text-xs font-semibold text-charcoal leading-tight">{hz.title}</h4>
-                    <span
-                      className={`text-[9px] font-mono uppercase px-1.5 py-0.5 rounded ${color.pill}`}
-                    >
-                      {hz.severity}
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-charcoal-muted leading-tight mt-0.5">{hz.description}</p>
-                </div>
+            {/* Header: 3-column layout (Left: Icon, Center: Title/Severity/Description, Right: Risk % & Lead Time) */}
+            <div className="grid grid-cols-[auto_minmax(0,1fr)_auto] items-start gap-2.5 sm:gap-3 mb-2.5 box-border">
+              {/* Left Column: Hazard Icon */}
+              <div className="p-1.5 rounded bg-ivory-50 border border-softborder shrink-0 mt-0.5 flex items-center justify-center">
+                {getHazardIcon(hz.type)}
               </div>
 
-              <div className="flex items-center gap-2.5 shrink-0">
-                {hz.estimated_lead_time_hours && (
-                  <span className="hidden sm:flex items-center gap-1 text-[10px] font-mono text-charcoal-muted bg-ivory-50 px-2 py-0.5 rounded border border-softborder">
-                    <Clock className="w-2.5 h-2.5 text-monsoon" />
-                    +{hz.estimated_lead_time_hours}h lead
+              {/* Center Column: Hazard Title, Severity Badge, and Description */}
+              <div className="min-w-0 box-border">
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <h4 className="text-xs font-semibold text-charcoal leading-tight break-words">
+                    {hz.title}
+                  </h4>
+                  <span
+                    className={`text-[9px] font-mono uppercase px-1.5 py-0.5 rounded shrink-0 whitespace-nowrap ${color.pill}`}
+                  >
+                    {hz.severity}
                   </span>
-                )}
+                </div>
+                <p className="text-[11px] text-charcoal-muted leading-tight mt-1 break-words">
+                  {hz.description}
+                </p>
+              </div>
+
+              {/* Right Column: Risk Percentage and Lead-Time Indicator */}
+              <div className="w-24 shrink-0 flex flex-col items-end justify-start text-right box-border pl-1">
                 <div className="text-right">
-                  <span className={`text-xs font-mono font-bold ${color.text} block`}>
+                  <span className={`text-xs font-mono font-bold leading-tight block ${color.text}`}>
                     {hz.score}%
                   </span>
-                  <span className="text-[9px] font-mono text-charcoal-muted">Risk</span>
+                  <span className="text-[9px] font-mono text-charcoal-muted block leading-tight">
+                    Risk
+                  </span>
                 </div>
+                {hz.estimated_lead_time_hours != null && hz.estimated_lead_time_hours > 0 && (
+                  <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] font-mono text-charcoal-muted bg-ivory-50 px-1.5 py-0.5 rounded border border-softborder mt-1.5 whitespace-nowrap">
+                    <Clock className="w-2.5 h-2.5 text-monsoon shrink-0" />
+                    <span>+{hz.estimated_lead_time_hours}h lead</span>
+                  </span>
+                )}
               </div>
             </div>
 
             {/* Scientific Mechanism & Precautions Details */}
             <div className="pt-2 border-t border-softborder grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px] text-charcoal leading-snug">
-              <div className="p-2 rounded bg-ivory-50/70 border border-softborder">
+              <div className="p-2 rounded bg-ivory-50/70 border border-softborder min-w-0 box-border">
                 <span className="text-[9px] font-mono font-semibold uppercase tracking-wider text-charcoal-muted block mb-0.5">
                   Physical Mechanism
                 </span>
-                <p className="text-charcoal-muted">{mechanism}</p>
+                <p className="text-charcoal-muted break-words">{mechanism}</p>
               </div>
 
-              <div className="p-2 rounded bg-ivory-50/70 border border-softborder">
+              <div className="p-2 rounded bg-ivory-50/70 border border-softborder min-w-0 box-border">
                 <span className="text-[9px] font-mono font-semibold uppercase tracking-wider text-charcoal-muted block mb-0.5">
                   Actionable Precaution
                 </span>
-                <p className="text-charcoal font-medium">{precaution}</p>
+                <p className="text-charcoal font-medium break-words">{precaution}</p>
               </div>
             </div>
 
             {/* Micro Progress Track */}
-            <div className="w-full h-1 rounded-full bg-ivory-200 overflow-hidden mt-2.5">
+            <div className="w-full h-1 rounded-full bg-ivory-200 overflow-hidden mt-2.5 box-border">
               <div
                 className="h-full rounded-full transition-all duration-500"
                 style={{
-                  width: `${Math.min(100, hz.score)}%`,
+                  width: `${Math.min(100, Math.max(0, hz.score))}%`,
                   backgroundColor: color.hex,
                 }}
               />

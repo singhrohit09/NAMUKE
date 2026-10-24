@@ -4,11 +4,11 @@
 
 @layer base {
   * {
-    border-color: #D8DCD5;
+    border-color: #DCD5C6;
   }
   body {
-    background-color: #F5F3ED;
-    color: #252B2D;
+    background-color: #F4F1EA;
+    color: #151B23;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
@@ -28,14 +28,14 @@
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #F5F3ED;
+  background: #F4F1EA;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D8DCD5;
+  background: #DCD5C6;
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #BCC2B9;
+  background: #B8B09F;
 }
 
 /* Leaflet Light Meteorological Map Theme */

@@ -9,6 +9,7 @@ import {
   Gauge,
   Eye,
   ShieldCheck,
+  Umbrella,
 } from 'lucide-react';
 import { CurrentWeather } from '../../types/weather';
 import { formatTime } from '../../utils/dateUtils';
@@ -61,19 +62,19 @@ export const WeatherOverview: React.FC<WeatherOverviewProps> = ({ weather }) => 
           </div>
         </div>
 
-        {/* Right: Technical Observation Row */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 w-full lg:w-auto">
+        {/* Right: Technical Observation Row covering all 8 meteorological parameters */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 w-full mt-2 pt-4 border-t border-softborder">
           <div className="p-3 rounded bg-ivory-50 border border-softborder flex flex-col justify-between">
             <span className="text-[10px] font-mono text-charcoal-muted uppercase tracking-wider flex items-center gap-1">
-              <Droplets className="w-3 h-3 text-monsoon" /> Humidity
+              <Droplets className="w-3 h-3 text-sage-dark" /> Humidity
             </span>
             <span className="text-base font-mono font-bold text-charcoal mt-1">{weather.humidity}%</span>
-            <span className="text-[10px] text-monsoon font-mono">Dew Pt. 23.4°C</span>
+            <span className="text-[10px] text-sage-dark font-mono">Dew Pt. 23.4°C</span>
           </div>
 
           <div className="p-3 rounded bg-ivory-50 border border-softborder flex flex-col justify-between">
             <span className="text-[10px] font-mono text-charcoal-muted uppercase tracking-wider flex items-center gap-1">
-              <Wind className="w-3 h-3 text-monsoon" /> Surface Wind
+              <Wind className="w-3 h-3 text-sage-dark" /> Surface Wind
             </span>
             <span className="text-base font-mono font-bold text-charcoal mt-1">
               {weather.wind_speed_kmh.toFixed(1)} <span className="text-[10px] font-normal font-sans">km/h</span>
@@ -83,17 +84,37 @@ export const WeatherOverview: React.FC<WeatherOverviewProps> = ({ weather }) => 
 
           <div className="p-3 rounded bg-ivory-50 border border-softborder flex flex-col justify-between">
             <span className="text-[10px] font-mono text-charcoal-muted uppercase tracking-wider flex items-center gap-1">
-              <Gauge className="w-3 h-3 text-terracotta" /> Pressure
+              <Gauge className="w-3 h-3 text-amber-dark" /> Pressure
             </span>
             <span className="text-base font-mono font-bold text-charcoal mt-1">
               {weather.pressure_hpa.toFixed(1)} <span className="text-[10px] font-normal font-sans">hPa</span>
             </span>
-            <span className="text-[10px] text-terracotta font-mono">Barometric Gradient</span>
+            <span className="text-[10px] text-amber-dark font-mono">Barometric Gradient</span>
           </div>
 
           <div className="p-3 rounded bg-ivory-50 border border-softborder flex flex-col justify-between">
             <span className="text-[10px] font-mono text-charcoal-muted uppercase tracking-wider flex items-center gap-1">
-              <Eye className="w-3 h-3 text-monsoon" /> Visibility
+              <CloudRain className="w-3 h-3 text-coral" /> Rainfall Rate
+            </span>
+            <span className="text-base font-mono font-bold text-charcoal mt-1">
+              {weather.precipitation_rate_mmh.toFixed(1)} <span className="text-[10px] font-normal font-sans">mm/h</span>
+            </span>
+            <span className="text-[10px] text-coral font-mono">Intensity</span>
+          </div>
+
+          <div className="p-3 rounded bg-ivory-50 border border-softborder flex flex-col justify-between">
+            <span className="text-[10px] font-mono text-charcoal-muted uppercase tracking-wider flex items-center gap-1">
+              <Umbrella className="w-3 h-3 text-sage-dark" /> Precip Chance
+            </span>
+            <span className="text-base font-mono font-bold text-charcoal mt-1">
+              {weather.precipitation_probability}%
+            </span>
+            <span className="text-[10px] text-charcoal-muted font-mono">Radar Likelihood</span>
+          </div>
+
+          <div className="p-3 rounded bg-ivory-50 border border-softborder flex flex-col justify-between">
+            <span className="text-[10px] font-mono text-charcoal-muted uppercase tracking-wider flex items-center gap-1">
+              <Eye className="w-3 h-3 text-sage-dark" /> Visibility
             </span>
             <span className="text-base font-mono font-bold text-charcoal mt-1">
               {weather.visibility_km} <span className="text-[10px] font-normal font-sans">km</span>

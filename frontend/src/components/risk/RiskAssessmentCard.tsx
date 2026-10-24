@@ -15,7 +15,7 @@ export const RiskAssessmentCard: React.FC<RiskAssessmentCardProps> = ({
   onViewDetailedMap,
 }) => {
   return (
-    <div className="bg-white border border-softborder rounded p-5 space-y-5 shadow-subtle">
+    <div className="bg-white border border-softborder rounded p-5 space-y-5 shadow-subtle box-border">
       <div className="flex items-center justify-between pb-3 border-b border-softborder">
         <div className="flex items-center gap-2">
           <ShieldAlert className="w-5 h-5 text-monsoon" />
@@ -41,8 +41,8 @@ export const RiskAssessmentCard: React.FC<RiskAssessmentCardProps> = ({
       </div>
 
       {/* Main Gauge & Top Level Metrics */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
-        <div className="md:col-span-5 flex flex-col items-center justify-center p-4 rounded bg-ivory-50 border border-softborder">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start box-border">
+        <div className="md:col-span-5 min-w-0 flex flex-col items-center justify-center p-4 rounded bg-ivory-50 border border-softborder box-border">
           <RiskGauge score={assessment.overall_score} size={190} />
           
           <div className="w-full mt-3">
@@ -54,7 +54,7 @@ export const RiskAssessmentCard: React.FC<RiskAssessmentCardProps> = ({
         </div>
 
         {/* Individual Hazard Spectrum */}
-        <div className="md:col-span-7 space-y-2">
+        <div className="md:col-span-7 min-w-0 space-y-2 box-border">
           <div className="flex items-center justify-between text-xs text-charcoal-muted mb-1 px-0.5">
             <span className="font-mono uppercase font-semibold text-charcoal tracking-wider text-[10px]">
               Individual Hazard Spectrum

@@ -29,4 +29,5 @@
 | **TSK-010** | Integration | End-to-end UI -> API -> Model verification and live testing | Team | Backlog | P0 | Waiting on TSK-008, TSK-009 |
 | **TSK-011** | Demo | Rehearse demo walkthrough and execute `DEMO_CHECKLIST.md` | Team | Backlog | P0 | 3 hours before presentation |
 | **TSK-012** | Frontend | Human-crafted editorial UI redesign (warm ivory palette, Newsreader serif typography, JetBrains Mono telemetry, Hero meteorological briefing, Positron Light Leaflet GIS, and public safety alerts) | Rohit | **Done** | P0 | Clean build (0 errors) & dev server verified on port 3000 |
+| **TSK-013** | Frontend | Fix layout and alignment issues in Multi-Hazard Risk Index (3-column layout, keep 72% Risk within boundary, responsive badges & lead times) | Rohit | **Done** | P0 | Clean build (0 errors) & verified in Vite production build |
 

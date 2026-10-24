@@ -2,10 +2,10 @@ import React from 'react';
 
 export const MapLegend: React.FC = () => {
   const levels = [
-    { label: 'Low (0–24)', color: '#526B59', desc: 'Minimal localized threat' },
-    { label: 'Moderate (25–49)', color: '#A67C38', desc: 'Scattered squall / gusts' },
-    { label: 'High (50–74)', color: '#B9684D', desc: 'Thunderstorms & lightning' },
-    { label: 'Severe (75–100)', color: '#8E3935', desc: 'Inundation & cloudburst' },
+    { label: 'Low (0–24)', color: '#586E53', desc: 'Minimal localized threat' },
+    { label: 'Moderate (25–49)', color: '#E8AD55', desc: 'Scattered squall / gusts' },
+    { label: 'High (50–74)', color: '#D96C5F', desc: 'Thunderstorms & lightning' },
+    { label: 'Severe (75–100)', color: '#B7493E', desc: 'Inundation & cloudburst' },
   ];
 
   return (

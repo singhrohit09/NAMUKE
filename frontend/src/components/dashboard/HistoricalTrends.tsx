@@ -121,7 +121,7 @@ export const HistoricalTrends: React.FC<HistoricalTrendsProps> = ({ data }) => {
               <Bar
                 name="Recorded Rainfall (mm)"
                 dataKey="actual_rainfall_mm"
-                fill="#B9684D"
+                fill="#D96C5F"
                 opacity={0.85}
                 radius={[2, 2, 0, 0]}
                 maxBarSize={28}
@@ -130,17 +130,17 @@ export const HistoricalTrends: React.FC<HistoricalTrendsProps> = ({ data }) => {
                 name="10-Year Climatological Median (mm)"
                 type="monotone"
                 dataKey="historical_avg_rainfall_mm"
-                stroke="#526B59"
+                stroke="#586E53"
                 strokeWidth={2}
-                dot={{ r: 3, fill: '#526B59' }}
+                dot={{ r: 3, fill: '#586E53' }}
               />
             </ComposedChart>
           ) : (
             <ComposedChart data={data} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-              <CartesianGrid stroke="#D8DCD5" strokeDasharray="3 3" vertical={false} />
-              <XAxis dataKey="date" stroke="#737975" fontSize={10} tickLine={false} fontFamily="JetBrains Mono, monospace" />
+              <CartesianGrid stroke="#DCD5C6" strokeDasharray="3 3" vertical={false} />
+              <XAxis dataKey="date" stroke="#6B7A8A" fontSize={10} tickLine={false} fontFamily="JetBrains Mono, monospace" />
               <YAxis
-                stroke="#B9684D"
+                stroke="#D96C5F"
                 fontSize={10}
                 tickLine={false}
                 fontFamily="JetBrains Mono, monospace"
@@ -154,7 +154,7 @@ export const HistoricalTrends: React.FC<HistoricalTrendsProps> = ({ data }) => {
                     return (
                       <div className="bg-white p-3 rounded border border-softborder shadow-elevated text-xs space-y-1.5 font-sans">
                         <p className="font-serif font-bold text-charcoal text-sm">{p.date}</p>
-                        <p className="text-terracotta font-mono">Recorded Temp: {p.actual_temp}°C</p>
+                        <p className="text-coral font-mono">Recorded Temp: {p.actual_temp}°C</p>
                         <p className="text-charcoal-muted font-mono">10-Year Normal: {p.historical_avg_temp}°C</p>
                       </div>
                     );
@@ -163,21 +163,21 @@ export const HistoricalTrends: React.FC<HistoricalTrendsProps> = ({ data }) => {
                 }}
               />
               <Legend
-                wrapperStyle={{ fontSize: '11px', color: '#737975', paddingTop: '8px', fontFamily: 'Inter, sans-serif' }}
+                wrapperStyle={{ fontSize: '11px', color: '#6B7A8A', paddingTop: '8px', fontFamily: 'Inter, sans-serif' }}
               />
               <Line
                 name="Observed Temperature (°C)"
                 type="monotone"
                 dataKey="actual_temp"
-                stroke="#B9684D"
+                stroke="#D96C5F"
                 strokeWidth={2.5}
-                dot={{ r: 3.5, fill: '#B9684D' }}
+                dot={{ r: 3.5, fill: '#D96C5F' }}
               />
               <Line
                 name="10-Year Climatological Average (°C)"
                 type="monotone"
                 dataKey="historical_avg_temp"
-                stroke="#737975"
+                stroke="#6B7A8A"
                 strokeDasharray="4 4"
                 strokeWidth={1.8}
                 dot={false}

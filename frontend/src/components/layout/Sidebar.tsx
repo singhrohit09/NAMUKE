@@ -56,26 +56,28 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   return (
     <aside
-      className={`h-screen bg-ivory-paper border-r border-softborder flex flex-col transition-all duration-300 z-30 select-none ${
+      className={`h-screen bg-charcoal border-r border-slate-700/60 flex flex-col transition-all duration-300 z-30 select-none text-ivory ${
         collapsed ? 'w-20' : 'w-64'
       }`}
     >
       {/* Brand Header */}
-      <div className="h-16 px-4 flex items-center justify-between border-b border-softborder">
+      <div className="h-16 px-4 flex items-center justify-between border-b border-slate-700/60">
         <div
           onClick={() => onTabChange('overview')}
-          className="flex items-center gap-3 cursor-pointer overflow-hidden"
+          className="flex items-center gap-3 cursor-pointer overflow-hidden group"
         >
-          <div className="w-10 h-10 rounded bg-monsoon/10 flex items-center justify-center shrink-0 border border-monsoon/25 shadow-subtle">
-            <ShieldAlert className="w-5 h-5 text-monsoon" />
-          </div>
+          <img
+            src="/src/assets/meghdoot-logo.svg"
+            alt="Meghdoot"
+            className="w-9 h-9 rounded shrink-0 shadow-sm transition-transform group-hover:scale-105"
+          />
           {!collapsed && (
             <div className="flex flex-col">
               <div className="flex items-baseline gap-1.5">
-                <span className="font-serif font-bold tracking-tight text-charcoal text-lg">Meghdoot</span>
-                <span className="text-xs text-monsoon font-serif font-medium">मेघदूत</span>
+                <span className="font-serif font-bold tracking-tight text-ivory text-lg">Meghdoot</span>
+                <span className="text-xs text-sage font-serif font-medium">मेघदूत</span>
               </div>
-              <span className="text-[10px] text-charcoal-muted tracking-wide truncate font-mono">
+              <span className="text-[10px] text-slate-500 tracking-wider truncate font-mono uppercase">
                 Weather Intelligence
               </span>
             </div>
@@ -84,7 +86,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         <button
           onClick={onToggleCollapse}
-          className="p-1.5 rounded text-charcoal-muted hover:text-charcoal hover:bg-ivory-200 transition hidden md:flex items-center justify-center border border-transparent hover:border-softborder"
+          className="p-1.5 rounded text-slate-500 hover:text-ivory hover:bg-slate-800 transition hidden md:flex items-center justify-center border border-transparent hover:border-slate-700"
           title={collapsed ? 'Expand sidebar' : 'Collapse sidebar'}
         >
           {collapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
@@ -100,16 +102,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
             <button
               key={item.id}
               onClick={() => onTabChange(item.id as NavigationTab)}
-              className={`w-full flex items-center gap-3 px-3 py-2 rounded text-xs transition-all group relative ${
+              className={`w-full flex items-center gap-3 px-3 py-2.5 rounded text-xs transition-all group relative ${
                 isActive
-                  ? 'bg-monsoon/10 text-monsoon font-semibold border border-monsoon/25 shadow-subtle'
-                  : 'text-charcoal-muted hover:text-charcoal hover:bg-ivory-100'
+                  ? 'bg-slate text-ivory font-semibold border border-slate-600 shadow-sm'
+                  : 'text-slate-400 hover:text-ivory hover:bg-slate-800/80 border border-transparent'
               } ${collapsed ? 'justify-center' : ''}`}
               title={collapsed ? item.label : undefined}
             >
               <Icon
                 className={`w-4 h-4 shrink-0 transition-colors ${
-                  isActive ? 'text-monsoon' : 'text-charcoal-muted group-hover:text-charcoal'
+                  isActive ? 'text-sage' : 'text-slate-500 group-hover:text-ivory'
                 }`}
               />
               {!collapsed && <span className="truncate">{item.label}</span>}
@@ -118,16 +120,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
                 <span
                   className={`ml-auto px-1.5 py-0.5 rounded text-[10px] font-mono font-medium ${
                     isActive
-                      ? 'bg-terracotta text-white'
-                      : 'bg-terracotta/15 text-terracotta border border-terracotta/30'
-                  } ${collapsed ? 'absolute top-1 right-2 w-2 h-2 p-0 rounded-full' : ''}`}
+                      ? 'bg-coral text-white'
+                      : 'bg-coral/20 text-coral border border-coral/30'
+                  } ${collapsed ? 'absolute top-1.5 right-2 w-2 h-2 p-0 rounded-full' : ''}`}
                 >
                   {!collapsed && item.badge}
                 </span>
               )}
 
               {isActive && (
-                <span className="absolute left-0 top-1 bottom-1 w-1 bg-monsoon rounded-r" />
+                <span className="absolute left-0 top-1.5 bottom-1.5 w-1 bg-sage rounded-r" />
               )}
             </button>
           );
@@ -135,13 +137,13 @@ export const Sidebar: React.FC<SidebarProps> = ({
       </nav>
 
       {/* Footer System Status */}
-      <div className="p-3 border-t border-softborder bg-ivory-50">
+      <div className="p-3 border-t border-slate-700/60 bg-charcoal-900/80">
         <div className={`flex items-center ${collapsed ? 'justify-center' : 'gap-2.5'}`}>
-          <div className="w-2 h-2 rounded-full bg-monsoon animate-pulse shrink-0" />
+          <div className="w-2 h-2 rounded-full bg-sage animate-pulse shrink-0" />
           {!collapsed && (
             <div className="flex flex-col text-[11px] leading-tight">
-              <span className="text-charcoal font-medium font-mono text-[10px]">Station Node: Active</span>
-              <span className="text-charcoal-muted text-[10px] font-mono">Convective Model v1.2</span>
+              <span className="text-ivory font-medium font-mono text-[10px]">Station Node: Active</span>
+              <span className="text-slate-500 text-[10px] font-mono">Convective Model v1.2</span>
             </div>
           )}
         </div>

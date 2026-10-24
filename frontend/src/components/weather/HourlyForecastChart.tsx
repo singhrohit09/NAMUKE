@@ -56,14 +56,14 @@ export const HourlyForecastChart: React.FC<HourlyForecastChartProps> = ({ data }
           <ComposedChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
             <defs>
               <linearGradient id="tempGradient" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#B9684D" stopOpacity={0.25} />
-                <stop offset="95%" stopColor="#B9684D" stopOpacity={0.0} />
+                <stop offset="5%" stopColor="#D96C5F" stopOpacity={0.25} />
+                <stop offset="95%" stopColor="#D96C5F" stopOpacity={0.0} />
               </linearGradient>
             </defs>
-            <CartesianGrid stroke="#D8DCD5" strokeDasharray="3 3" vertical={false} />
+            <CartesianGrid stroke="#DCD5C6" strokeDasharray="3 3" vertical={false} />
             <XAxis
               dataKey="hour"
-              stroke="#737975"
+              stroke="#6B7A8A"
               fontSize={10}
               tickLine={false}
               fontFamily="JetBrains Mono, monospace"
@@ -71,7 +71,7 @@ export const HourlyForecastChart: React.FC<HourlyForecastChartProps> = ({ data }
             />
             <YAxis
               yAxisId="temp"
-              stroke="#B9684D"
+              stroke="#D96C5F"
               fontSize={10}
               domain={['dataMin - 2', 'dataMax + 2']}
               tickLine={false}
@@ -81,7 +81,7 @@ export const HourlyForecastChart: React.FC<HourlyForecastChartProps> = ({ data }
             <YAxis
               yAxisId="rain"
               orientation="right"
-              stroke="#526B59"
+              stroke="#586E53"
               fontSize={10}
               domain={[0, 100]}
               tickLine={false}
@@ -95,11 +95,11 @@ export const HourlyForecastChart: React.FC<HourlyForecastChartProps> = ({ data }
                   return (
                     <div className="bg-white p-3 rounded border border-softborder shadow-elevated text-xs space-y-1.5 font-sans">
                       <p className="font-serif font-bold text-charcoal text-sm">{p.hour} — {p.condition}</p>
-                      <div className="flex items-center gap-2 text-terracotta font-mono text-[11px]">
+                      <div className="flex items-center gap-2 text-coral font-mono text-[11px]">
                         <Thermometer className="w-3.5 h-3.5" />
                         <span>Temp: {p.temp}°C (Feels {p.feels}°C)</span>
                       </div>
-                      <div className="flex items-center gap-2 text-monsoon font-mono text-[11px]">
+                      <div className="flex items-center gap-2 text-sage-dark font-mono text-[11px]">
                         <CloudRain className="w-3.5 h-3.5" />
                         <span>Precip Prob: {p.rainProb}% ({p.rainRate} mm/h)</span>
                       </div>
@@ -112,8 +112,8 @@ export const HourlyForecastChart: React.FC<HourlyForecastChartProps> = ({ data }
             <Bar
               yAxisId="rain"
               dataKey="rainProb"
-              fill="#526B59"
-              opacity={0.3}
+              fill="#586E53"
+              opacity={0.35}
               radius={[2, 2, 0, 0]}
               maxBarSize={16}
             />
@@ -121,7 +121,7 @@ export const HourlyForecastChart: React.FC<HourlyForecastChartProps> = ({ data }
               yAxisId="temp"
               type="monotone"
               dataKey="temp"
-              stroke="#B9684D"
+              stroke="#D96C5F"
               strokeWidth={2}
               fillOpacity={1}
               fill="url(#tempGradient)"
